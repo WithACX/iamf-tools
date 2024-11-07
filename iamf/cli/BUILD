@@ -517,14 +517,8 @@ cc_library(
     ],
 )
 
-cc_binary(
-    name = "encoder_main",
-    srcs = [
-        "encoder_main.cc",
-    ],
-    data = [
-        "//iamf/cli/testdata:input_wav_files",
-    ],
+cc_shared_library(
+    name = "groove_iamf_encoder",
     deps = [
         ":encoder_main_lib",
         "//iamf/cli/adm_to_user_metadata/app:adm_to_user_metadata_main_lib",
